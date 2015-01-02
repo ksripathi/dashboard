@@ -104,6 +104,41 @@ function showInstitutes(str)
     }
 }
 
+function showdisplay(str)
+{
+ 
+    if (str == "")
+    {
+        document.getElementById("labs").innerHTML = "";
+        return;
+    } 
+    else 
+    {
+        var x = document.forms["myform"]["selectbyinstitute"].value;
+        var y = document.forms["myform"]["selectbydiscipline"].value;
+        var z = document.forms["myform"]["selectbystatus"].value;
+        var w = document.forms["myform"]["selectbyintegrationlevel"].value;
+               
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+               document.getElementById("test").innerHTML = xmlhttp.responseText;
+              
+            }
+        }   
+        xmlhttp.open("POST", "display_info.php", true);
+        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xmlhttp.send("p=" + x + "&q=" + y + "&r=" + z + "&s=" + w); 
+    }
+
+}
+
 function showDisciplines(str) 
 {
     if (str == "")
@@ -126,70 +161,6 @@ function showDisciplines(str)
             }
         }
         xmlhttp.open("GET","getdisciplines.php",true);
-        xmlhttp.send();
-    }
-}
-
-function showlabsbyinstitute(str) {
-    if (str.length == 0) {
-        document.getElementById("test").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("test").innerHTML = xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET", "getlabsbyinstitute.php?q=" + str, true);
-        xmlhttp.send();
-    }
-}
-
-
-function showlabsbydiscipline(str) {
-    if (str.length == 0) {
-        document.getElementById("test").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("test").innerHTML = xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET", "getlabsbydiscipline.php?q=" + str, true);
-        xmlhttp.send();
-    }
-}
-
-function showlabsbystatus(str) {
-    if (str.length == 0) {
-        document.getElementById("test").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("test").innerHTML = xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET", "getlabsbystatus.php?q=" + str, true);
-        xmlhttp.send();
-    }
-}
-function showlabsbyintegration(str) {
-    if (str.length == 0) {
-        document.getElementById("test").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("test").innerHTML = xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET", "getlabsbyintegration.php?q=" + str, true);
         xmlhttp.send();
     }
 }

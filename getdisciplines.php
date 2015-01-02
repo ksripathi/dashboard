@@ -16,8 +16,8 @@ echo "<table border='1'>";
 echo "<tr><td>DISCIPLINE NAME</td></tr>";
 while($row = mysqli_fetch_array($result)) {
  
-  
-  echo "<tr align='left'><td>". $row['discipline_name'] . "</td></tr>";
+   echo "<tr align='left'><td><a href='test5.php?id=\"$row[discipline_name]\"'  value=\"$row[discipline_name]\">".$row[discipline_name]."</a></td></tr>";
+  //echo "<tr align='left'><td>". $row['discipline_name'] . "</td></tr>";
 
 }
 
