@@ -13,7 +13,7 @@ $sql="SELECT * from labs WHERE id IN (SELECT lab_id FROM `technologies_used` WHE
 
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-//echo "Total Number Of Institutes:".$two;
+echo "<br>Total Number Of Institutes:".$two;
 echo "<br><br>";
 echo "<table border='1'>";
 echo "<h4>Number of Labs used <font color='blue'>$e </font> Technology : " .$two."</h4>";

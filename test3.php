@@ -1,11 +1,5 @@
-<?php
-$con = mysqli_connect('localhost','root','root','vlabs_database');
-if (!$con) {
-  die('Could not connect: ' . mysqli_error($con));
-}
-?>
-<button onclick="goBack()">Go Back</button>
-
+<link rel="stylesheet" href="test.css" type="text/css">
+<a href="javascript:goBack()" class="myButton">Back</a>
 <script>
 function goBack()
 {
@@ -14,7 +8,7 @@ function goBack()
 </script>
 
 <?php
-
+include("config.php");
 $a=$_GET['id'];
 $b=substr($a,1);
 $c=strrev($b);
@@ -29,7 +23,7 @@ $two = mysqli_num_rows($result);
 echo "<br><br>";
 echo "<table border='1'>";
 echo "<h4>Number of Labs used <font color='blue'>$e </font> Technology : " .$two."</h4>";
-echo "<tr><td>LAB ID</td><td>LAB NAME</td></tr>";
+echo "<tr><th>LAB ID</th><th>LAB NAME</th></tr>";
 
 while($row = mysqli_fetch_array($result))
 {

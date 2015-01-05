@@ -9,7 +9,7 @@ $c=strrev($b);
 $d=substr($c,1);
 $e=strrev($d);
 ?>
-<button onclick="goBack()">Go Back</button>
+<a href="javascript:goBack()" class="myButton">Back</a>
 
 <script>
 function goBack()
@@ -17,9 +17,9 @@ function goBack()
     window.history.back()
 }
 </script>
-
+<link rel="stylesheet" href="test.css" type="text/css">
 <?php
-
+include("config.php");
 mysqli_select_db($con,"vlabs_database");
 $sql="SELECT * FROM labs WHERE discipline_id IN (select id from disciplines where discipline_name='$e')";
 
@@ -29,7 +29,7 @@ $two = mysqli_num_rows($result);
 echo "<br><br>";
 echo "<table border='1'>";
 echo "<h4>Number of Labs used <font color='blue'>$e </font> Technology : " .$two."</h4>";
-echo "<tr><td>LAB ID</td><td>LAB NAME</td></tr>";
+echo "<tr><th>LAB ID</th><th>LAB NAME</th></tr>";
 
 while($row = mysqli_fetch_array($result))
 {

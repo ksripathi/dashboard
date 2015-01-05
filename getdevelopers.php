@@ -1,19 +1,13 @@
+<link rel="stylesheet" href="test.css" type="text/css">
 <?php
-$con = mysqli_connect('localhost','root','root','vlabs_database');
-if (!$con) {
-  die('Could not connect: ' . mysqli_error($con));
-}
-
-mysqli_select_db($con,"vlabs_database");
+include("config.php");
 $sql="SELECT * FROM developers";
-
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-echo "Number Of Developers:".$two;
+echo "<br>Number Of Developers:".$two;
 echo "<br><br>";
-echo "<table border='1'>";
-
-echo "<tr><td>INSTITUTE NAME</td><td>DEVELOPER NAME</td><td>EMAIL ID</td></tr>";
+echo "<table style='width:90%' border=1>";
+echo "<tr><th>INSTITUTE NAME</th><th>DEVELOPER NAME</th><th>EMAIL ID</td></tr>";
 while($row = mysqli_fetch_array($result)) {
  
   

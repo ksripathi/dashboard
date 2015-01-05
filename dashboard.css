@@ -7,7 +7,8 @@ body {
     height: 100%;
     font-size: 100%;
     position: absolute;
-    background-image: url("images/1.jpg");
+    background-color: none
+    //background-image: url("images/1.jpg");
     top: 0%;
     bottom: 0%;
     right: 0%;
@@ -21,7 +22,7 @@ body {
     left: 0px;
     right: 0px;
     height: 9%;
-    font-size: 4vh;
+    font-size: 4vh;    
     background-image: url("images/2.jpg");
     padding-top: 1.3vmin;
 }

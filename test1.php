@@ -1,10 +1,5 @@
-<?php
-$con = mysqli_connect('localhost','root','root','vlabs_database');
-if (!$con) {
-  die('Could not connect: ' . mysqli_error($con));
-}
-?>
-<button onclick="goBack()">Go Back</button>
+<link rel="stylesheet" href="test.css" type="text/css">
+<a href="javascript:goBack()" class="myButton"><blink>Back</blink></a>
 
 <script>
 function goBack()
@@ -14,17 +9,23 @@ function goBack()
 </script>
 
 <?php
+include("config.php");
 $a=$_GET['id'];
 $b=substr($a,1);
 $c=strrev($b);
 $d=substr($c,1);
 $e=strrev($d);
-mysqli_select_db($con,"vlabs_database");
+
 $sql="SELECT * FROM labs a, disciplines b, institutes c WHERE a.institute_id=c.id and a.discipline_id=b.id and lab_name='$e'";
 
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-//echo "Total Number Of Institutes:".$two;
+if($two==0)
+{
+echo "<font color='red'>No Details Found</font>";
+exit();
+}
+
 echo "<br>";
 echo "<table border='1'>";
 echo "<h4>Details About <font color='blue'>$e</font> Lab :</h4>";
@@ -51,8 +52,6 @@ echo "<tr><td>TYPE OF LAB</td><td align='left'>" . $row['type_of_lab'] ."</td></
 echo "<tr><td>IS AUTOHOSTABLE</td><td align='center'>" . $row['auto_hostable'] ."</td></tr>";
 echo "<tr><td>REMARKS</td><td align='left'>" . $row['remarks'] ."</td></tr>";
 echo "<tr><td>STATUS</td><td>" . $row['status'] ."</td></tr>";
- 
-
 
 }
 echo "</table><br>";
@@ -61,26 +60,24 @@ $sql="SELECT * FROM experiments where id IN (select id from labs where lab_name=
 
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-echo "<h4>Total Experiments in <font color='blue'>$e</font> Lab : $two</h4>";
+if($two==0)
+{
+echo "<font color='red'>No Experiments Found</font>";
+exit();
+}
+
+echo "<br><h4>Total Experiments in <font color='blue'>$e</font> Lab : $two</h4>";
 
 echo "<br>";
 echo "<table border='1'>";
 
 echo "<tr><td>EXPERIMENT NAME</td><td>CONTENT URL</td><td>SIMULATION URL</td></tr>";
-while($row = mysqli_fetch_array($result)) {
- 
-  
-//  echo "<tr align='left'><td>".$row['lab_id']."</td><td>" . $row['lab_name'] . "</td></tr>";
-
+while($row = mysqli_fetch_array($result))
+{
 echo "<tr align='left'><td>$row[exp_name]</td><td><a href=$row[content_url] value=\"$row[content_url]\">".$row[content_url]."</a></td><td><a href=$row[simulation_url]  value=\"$row[simulation_url]\">".$row[simulation_url]."</a></td></tr>";
 
 }
-
-  echo "</table>";
-
-
-
-
+echo "</table>";
 mysqli_close($con);
 
 

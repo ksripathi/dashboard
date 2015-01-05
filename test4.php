@@ -1,8 +1,14 @@
-<?php
-$con = mysqli_connect('localhost','root','root','vlabs_database');
-if (!$con) {
-  die('Could not connect: ' . mysqli_error($con));
+<link rel="stylesheet" href="test.css" type="text/css">
+<a href="javascript:goBack()" class="myButton">Back</a>
+<script>
+function goBack()
+{
+    window.history.back()
 }
+</script>
+
+<?php
+include("config.php");
 $a=$_GET['id'];
 $b=substr($a,1);
 $c=strrev($b);
@@ -13,11 +19,11 @@ $sql="SELECT * FROM labs WHERE institute_id in (select id from institutes where 
 
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-//echo "Total Number Of Institutes:".$two;
+//echo "<br>Total Number Of Institutes:".$two;
 echo "<br><br>";
 echo "<table border='1'>";
 echo "<h4>Number of Labs used <font color='blue'>$e </font> Technology : " .$two."</h4>";
-echo "<tr><td>LAB ID</td><td>LAB NAME</td></tr>";
+echo "<tr><th>LAB ID</th><th>LAB NAME</th></tr>";
 
 while($row = mysqli_fetch_array($result))
 {

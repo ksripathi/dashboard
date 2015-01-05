@@ -1,10 +1,5 @@
 <?php
-$con = mysqli_connect('localhost','root','root','vlabs_database');
-if (!$con) {
-  die('Could not connect: ' . mysqli_error($con));
-}
-
-mysqli_select_db($con,"vlabs_database");
+include("config.php");
 $sql="SELECT * FROM institutes";
 $sql1="SELECT * FROM disciplines";
 $result1 = mysqli_query($con,$sql1);

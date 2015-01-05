@@ -1,17 +1,9 @@
 <?php
+include("config.php");
 $p = $_POST["p"];//institute
 $q = $_POST["q"];//discipline
 $r = $_POST["r"];//status
 $s = $_POST["s"];//integration-level
-$con = mysqli_connect('localhost','root','root','vlabs_database');
-mysqli_select_db($con,"vlabs_database");
-
-if (!$con) 
-{
-  die('Could not connect: ' . mysqli_error($con));
-  exit(0);
-}
-
 
 if($p!=0 && $q==0 && $r=='None' && $s=='None')//disply only institutes
 {
@@ -124,11 +116,11 @@ exit();
 
 else
 {
-echo "<h4>Total Number Of Labs: ".$two."</h4>";
+echo "<br><h4>Total Number Of Labs: ".$two."</h4>";
 }
 echo "<br><br>";
 echo "<table border='2' align='center'>";
-echo "<tr align='center'><td>LAB ID</td><td>LAB NAME</td><td>INTEGRATION LEVEL</td><td>STATUS</td></tr>";
+echo "<tr align='center'><th>LAB ID</th><th>LAB NAME</th><th>INTEGRATION LEVEL</th><th>STATUS</th></tr>";
 while($row = mysqli_fetch_array($result)) 
  {  
     echo "<tr align='left'><td>$row[lab_id]</td>";
