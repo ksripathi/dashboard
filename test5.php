@@ -8,8 +8,20 @@ $b=substr($a,1);
 $c=strrev($b);
 $d=substr($c,1);
 $e=strrev($d);
+?>
+<button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack()
+{
+    window.history.back()
+}
+</script>
+
+<?php
+
 mysqli_select_db($con,"vlabs_database");
-$sql="SELECT * from labs WHERE id IN (SELECT lab_id FROM `technologies_used` WHERE tech_id IN( select id from technologies where technology_name ='$e'))";
+$sql="SELECT * FROM labs WHERE discipline_id IN (select id from disciplines where discipline_name='$e')";
 
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);

@@ -3,6 +3,18 @@ $con = mysqli_connect('localhost','root','root','vlabs_database');
 if (!$con) {
   die('Could not connect: ' . mysqli_error($con));
 }
+?>
+<button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack()
+{
+    window.history.back()
+}
+</script>
+
+<?php
+
 $a=$_GET['id'];
 $b=substr($a,1);
 $c=strrev($b);

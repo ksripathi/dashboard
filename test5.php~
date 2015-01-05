@@ -9,7 +9,7 @@ $c=strrev($b);
 $d=substr($c,1);
 $e=strrev($d);
 mysqli_select_db($con,"vlabs_database");
-$sql="SELECT * FROM labs WHERE institute_id in (select id from institutes where institute_name='$e')";
+$sql="SELECT * from labs WHERE id IN (SELECT lab_id FROM `technologies_used` WHERE tech_id IN( select id from technologies where technology_name ='$e'))";
 
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
