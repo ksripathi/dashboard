@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="test.css" type="text/css">
+<link rel="stylesheet" href="dashboard.css" type="text/css">
+
 <a href="javascript:goBack()" class="myButton"><blink>Back</blink></a>
 
 <script>
@@ -27,12 +29,12 @@ exit();
 }
 
 echo "<br>";
-echo "<table border='1'>";
+echo "<table border='1' id='tableID' class='info1'>";
 echo "<h4>Details About <font color='blue'>$e</font> Lab :</h4>";
 
 while($row = mysqli_fetch_array($result)) {
 echo "<tr align='left'><td>LAB ID</td><td>". $row['lab_id'] ."</td></tr>";
-echo "<tr><td>LAB NAME</td><td>" . $row['lab_name'] ."</td></tr>";
+echo "<tr><td align='left'>LAB NAME</td><td>" . $row['lab_name'] ."</td></tr>";
 echo "<tr><td>DISCIPLINE NAME</td><td>" . $row['discipline_name'] ."</td></tr>";
 echo "<tr><td>INSTITUTE NAME</td><td>" . $row['institute_name'] ."</td></tr>";
 echo "<tr><td>DEVELOPER EMAIL-ID</td><td>" . $row['developer'] ."</td></tr>";
@@ -65,8 +67,8 @@ exit();
 
 echo "<br><div class='info'>Total Experiments in <font color='blue'>$e</font> Lab : $two</div>";
 
-echo "<br>";
-echo "<table border='1'>";
+echo "<br><br>";
+echo "<table border='1' id='tableID' class='info1'>";
 
 echo "<tr><td>EXPERIMENT NAME</td><td>CONTENT URL</td><td>SIMULATION URL</td></tr>";
 while($row = mysqli_fetch_array($result))

@@ -22,7 +22,7 @@ $two = mysqli_num_rows($result);
 //echo "<br>Total Number Of Institutes:".$two;
 echo "<br><br>";
 echo "<table border='1'>";
-echo "<h4>Number of Labs used <font color='blue'>$e </font> Technology : " .$two."</h4>";
+echo "<h4>Number of labs developed by <font color='blue'>$e </font> institute : " .$two."</h4>";
 echo "<tr><th>LAB ID</th><th>LAB NAME</th></tr>";
 
 while($row = mysqli_fetch_array($result))
