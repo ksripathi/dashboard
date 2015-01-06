@@ -163,7 +163,7 @@ body {
     /*border: 1px solid #FF0;*/
     position: absolute;
     text-align: left;
-    font-size: 16px;
+    font-size: 2.1vh;
     font-style: normal;
     width: 16%;
     float: left;
@@ -172,16 +172,24 @@ body {
     left: 30%;
 }
 
-.styled-select {
+/*.styled-select {*/
     /*border: 1px solid #F00;*/
-    position: relative;
+/*    position: relative;
     background: url('http://i62.tinypic.com/15xvbd5.png') no-repeat scroll 94% 1px transparent;
     height: 30px;
     overflow: hidden;
     width: 100%;
     margin: -3px;
     margin-top: -50%;
-}
+}*/
+.styled-select {
+    position: absolute;
+    background: url('http://i62.tinypic.com/15xvbd5.png') no-repeat scroll 94% 1px transparent;
+    height: 27px;
+    overflow: hidden;
+    width: 80%;
+    margin: -51% -85px -18px;
+    }
 /*.label_class{
     position: absolute;
     font: sans-serif;
@@ -215,10 +223,12 @@ body {
     background: none repeat scroll 0% 0% transparent;
     margin-left: 1%;
     font-size: 14px;
-    height: 32px;
-    padding: 4px;
-    width: 100%;
-    float: right;
+    /*height: 32px;*/
+   font-size: 12px;
+  height: 28px;
+  padding: 2px;
+ width: 92%;
+  float: right;
 }
 
 .styled-select.slate {
