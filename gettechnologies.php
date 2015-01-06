@@ -6,7 +6,7 @@ $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
 echo "<div class='info1'>Number Of Developers:".$two."</div>";
 echo "<br>";
-echo "<table border='1'>";
+echo "<table style='width:50%' border=1 id='tableID'>";
 
 echo "<tr><th>TECHNOLOGY ID</th><th>TECHNOLOGY NAME</th><th>FOSS</th></tr>";
 while($row = mysqli_fetch_array($result))
