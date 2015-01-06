@@ -4,7 +4,7 @@ include("config.php");
 $sql="SELECT * FROM institutes";
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-echo "<br><div class='info'>Total Number Of Institutes:".$two."</div>";
+echo "<br><div class='info1'>Total Number Of Institutes:".$two."</div>";
 echo "<br><br>";
 echo "<table border='1'>";
 
