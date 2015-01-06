@@ -99,18 +99,18 @@ $sql="SELECT * FROM labs a WHERE a.integration_level='$s' and a.discipline_id='$
 
 else
 {
-echo "<br><br>";
-echo "<font color='red'> Please Select Atleast One Value..!!</font>";
+echo "<br>";
+echo "<font color='red' size='3px'> Please Select Atleast One Value..!!</font>";
 exit();
 }
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);    
-echo "<br><br>";
+echo "<br>";
 
 if($two==0)
 {
+echo "<font color='red' size='3px'> No results for this query..!!</font>";
 
-echo "No Labs Found For This Query";
 exit();
 }
 
