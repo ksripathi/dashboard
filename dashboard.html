@@ -11,9 +11,13 @@
 <body onload='showdisplay(str)'>
 <div class = "a"></div>
 <div id="header">Virtual Labs Dashboard
-<div id = "login"><button type="button" onclick="Log in">Log In</button></div>
-<div class = "vlabsIcon" > </div>
+<!-- <div id = "login"><button type="button" onclick="Log in">Log In</button></div> -->
+<div id = "login" onclick="logOut()" ><img src="images/logout.jpg" width="100%" height="100%"></div>
+<div class = "vlabsIcon" > <img src="images/VirtualLabs_final_logo.png" width="100%" height="100%"></div>
+
+<!-- <div class = "vlabsIcon" > </div> -->
 <div></div>
+<div class="line" ></div>
 <ul class="tabs">
     <li><a href="#view4">Search</a></li>   
     <li><a href="#view1" onclick="showLabs(this.value)">Labs</a></li>
@@ -50,12 +54,15 @@
 </div>
 
 <div class="tabcontents">
-    <div id="view4">
+  <div id="view4">  
         
-<form name="myform">
-<br> Select institute name: 
+<form name="myform" id="form-id">
+<br>
+
+<div class="label_class"> Select institute name: </div>
+<div class="div-width"><div class="styled-select blue semi-square align_class " >
 <select name ="selectbyinstitute">
-  <option value="0">None</option>
+<option value="0">None</option>
 <option value="1">Amrita University</option>
 <option value="2">COEP</option>
 <option value="3">Dayalbagh</option>
@@ -69,7 +76,12 @@
 <option value="11"> IIT-Roorkee</option>
 <option value="12">NIT-K</option>
 </select><br>
-<br> Select discipline name:
+</div>
+</div>
+<br> 
+<br>
+<div class="label_class">Select discipline name:</div>
+<div class="div-width"><div class="styled-select blue semi-square" >
 <select name ="selectbydiscipline">
 <option value="0">None</option>
 <option value="1">Aerospace Engineering</option>
@@ -85,15 +97,21 @@
 <option value="11">Physical Sciences</option>
 <option value="12">Textile Department</option>
 </select>
+</div>
+</div>
 <br><br>
-<br>Select Status:
+<div class="label_class">Select Status:</div>
+<div class="div-width"><div class="styled-select blue semi-square" >
 <select name ="selectbystatus">
 <option value="None">None</option>
 <option value="Hosted">Hosted</option>
 <option value="Not Hosted">Not Hosted</option>
 <option value="Hosted with simulations">Hosted with simulations</option>
 </select>
-<br><br>Select Integration Level:
+</div></div>
+<br><br>
+<div class="label_class">Select Integration Level:</div>
+<div class="div-width"><div class="styled-select blue semi-square" >
 <select name = "selectbyintegrationlevel">
 <option value="None">None</option>
 <option value="0">0</option>
@@ -103,11 +121,12 @@
 <option value="4">4</option>
 <option value="5">5</option>
 </select>
+</div></div>
 <br><br>
 <a href="javascript:showdisplay(this.value)" class="myButton" value="test">Search</a>
 <!--<input type="button" value="submit" onclick="showdisplay(this.value)"></innput>-->
 </form>
-<h4 id="test" align="center"></h4>
+<div id="test" align="center"></div>
 
 </div>
 </div>
