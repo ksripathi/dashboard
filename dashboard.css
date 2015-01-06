@@ -227,7 +227,7 @@ body {
    font-size: 12px;
   height: 28px;
   padding: 2px;
- width: 92%;
+ width: 100%;
   float: right;
 }
 
@@ -265,7 +265,7 @@ body {
 /* -------------------- Colors: Background */
 .slate   { background-color: #ddd; }
 .green   { background-color: #779126; }
-.blue    { background-color: ; }
+.blue    { background-color: #b3b3b3; }
 /*.yellow  { background-co/lor: #eec111; }*/
 .black   { background-color: #000; }
 
