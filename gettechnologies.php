@@ -4,7 +4,7 @@ include("config.php");
 $sql="SELECT * FROM technologies";
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-echo "<br>Number Of Developers:".$two;
+echo "<br><div class='info'>Number Of Developers:".$two."</div>";
 echo "<br><br>";
 echo "<table border='1'>";
 
