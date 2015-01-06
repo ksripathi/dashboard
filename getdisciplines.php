@@ -4,8 +4,8 @@ include("config.php");
 $sql="SELECT * FROM disciplines";
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-echo "<br><div class='info1'>Total Number Of Disciplines:".$two."</div>";
-echo "<br><br>";
+echo "<div class='info1'>Total Number Of Disciplines:".$two."</div>";
+echo "<br>";
 echo "<table border='1'>";
 
 echo "<tr><th>DISCIPLINE NAME</th></tr>";
