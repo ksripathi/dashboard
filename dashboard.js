@@ -47,7 +47,7 @@ function add_status(op1)
  {
  	alert("inside add_status")
  	document.getElementById('status_id').className = "new_stt";
- 	return();
+ 	return;
 }
 function add_inte(op2){
 	 	document.getElementById('integration_level_id').className = "new_stt";

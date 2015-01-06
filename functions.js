@@ -164,3 +164,4 @@ function showDisciplines(str)
         xmlhttp.send();
     }
 }
+

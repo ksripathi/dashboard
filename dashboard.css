@@ -77,7 +77,7 @@ body {
 	top: 100%;
 	text-align: center;
 	height: auto;
-	margin-left: 20%;
+	margin-left: 24%;
 	margin-right: 35%;
 	width: 80%;
 	margin-top: 25%;
@@ -255,14 +255,14 @@ body {
 /* -------------------- Colors: Background */
 .slate   { background-color: #ddd; }
 .green   { background-color: #779126; }
-.blue    { background-color: #3b8ec2; }
+.blue    { background-color: ; }
 /*.yellow  { background-co/lor: #eec111; }*/
 .black   { background-color: #000; }
 
 /* -------------------- Colors: Text */
 .slate select   { color: #000; }
 .green select   { color: #fff; }
-.blue select    { color: #fff; }
+.blue select    { color: #000; }
 /*.yellow select  { color: #000; }*/
 .black select   { color: #fff; }
 

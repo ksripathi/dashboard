@@ -11,14 +11,26 @@ table {
     
 }
 th, td {
+	/*width: 50%;*/
     padding: 5px;
     margin-top: 70%;
+
     /*background-color:;*/
 }
 th
 {
+/*width: 50%;*/
 text-align:center;
 background-color:grey;
+}
+.info{
+    position: relative;
+    left: 0%;
+    text-align: left;
+    margin-left: 25%;
+    margin-top: 0%;
+    font-size: 16px;
+    /*font-family: Arial;*/
 }
 a {text-decoration:none;}
 .myButton {
