@@ -4,7 +4,7 @@ include("config.php");
 $sql="SELECT * FROM developers";
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-echo "<div class='info1'>Number Of Developers:".$two."</div>";
+echo "<div class='info1'>Total number of developers: <font color='blue'>".$two."</font></div>";
 echo "<br>";
 echo "<table style='width:60%' border=1 id='tableID'>";
 echo "<tr><th>INSTITUTE NAME</th><th>DEVELOPER NAME</th><th>EMAIL ID</td></tr>";

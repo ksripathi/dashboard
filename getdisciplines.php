@@ -4,7 +4,7 @@ include("config.php");
 $sql="SELECT * FROM disciplines";
 $result = mysqli_query($con,$sql);
 $two = mysqli_num_rows($result);
-echo "<div class='info1'>Total Number Of Disciplines:".$two."</div>";
+echo "<div class='info1'>Total number of disciplines: <font color='blue'>".$two."</font></div>";
 echo "<br>";
 echo "<table style='width:30%' border=1 id='tableID'>";
 
