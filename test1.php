@@ -30,10 +30,7 @@ echo "<br>";
 echo "<table border='1'>";
 echo "<h4>Details About <font color='blue'>$e</font> Lab :</h4>";
 
-
 while($row = mysqli_fetch_array($result)) {
- 
-  
 echo "<tr align='left'><td>LAB ID</td><td>". $row['lab_id'] ."</td></tr>";
 echo "<tr><td>LAB NAME</td><td>" . $row['lab_name'] ."</td></tr>";
 echo "<tr><td>DISCIPLINE NAME</td><td>" . $row['discipline_name'] ."</td></tr>";
@@ -66,7 +63,7 @@ echo "<font color='red'>No Experiments Found</font>";
 exit();
 }
 
-echo "<br><h4>Total Experiments in <font color='blue'>$e</font> Lab : $two</h4>";
+echo "<br><div class='info'>Total Experiments in <font color='blue'>$e</font> Lab : $two</div>";
 
 echo "<br>";
 echo "<table border='1'>";

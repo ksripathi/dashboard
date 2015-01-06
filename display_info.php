@@ -116,7 +116,7 @@ exit();
 
 else
 {
-echo "<br><h4>Total Number Of Labs: ".$two."</h4>";
+echo "<br><div class='info'> Total Number Of Labs: ".$two."</div>";
 }
 echo "<br><br>";
 echo "<table border='2' align='center'>";
