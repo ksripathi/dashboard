@@ -74,10 +74,11 @@ body {
 
 #test{
 	position: relative;
+  border: 1px solid black;
 	top: 100%;
 	text-align: center;
 	height: auto;
-	margin-left: 24%;
+	margin-left: 0%;
 	margin-right: 35%;
 	width: 80%;
 	margin-top: 25%;
