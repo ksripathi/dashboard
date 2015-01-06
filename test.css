@@ -24,6 +24,12 @@ th
 text-align:center;
 background-color:grey;
 }
+#tableID{
+	position: relative;
+	border: 1px solid red;
+	margin-left: 0%;
+}
+
 .info{
     position: relative;
     left: 0%;
