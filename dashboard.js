@@ -57,3 +57,11 @@ function add_source(op3)
  	document.getElementById('source_avail_id').className = "new_stt";
  	
 }
+function bs(){
+  // alert("hello")
+document.getElementById("for-disable").disabled = true;
+// alert("Please Login to search")
+}
+// dosome(){
+//   alert("done");
+// }
