@@ -1,3 +1,4 @@
+
 <?php
 include("config.php");
 $p = $_POST["p"];//institute
@@ -100,7 +101,8 @@ $sql="SELECT * FROM labs a WHERE a.integration_level='$s' and a.discipline_id='$
 else
 {
 echo "<br>";
-echo "<font color='red' size='3px'> Please Select Atleast One Value..!!</font>";
+//echo "<div class='info1'>Total number of institutes: <font color='blue'>".$two."</font></div>";
+echo "<font color='red' size=3>Please select atleast one value..!!</font>";
 exit();
 }
 $result = mysqli_query($con,$sql);
@@ -116,16 +118,17 @@ exit();
 
 else
 {
+
 echo "<br><div class='info'> Total number of labs: <font color='blue'>".$two."</font></div>";
 }
 echo "<br><br>";
 echo "<table border='2' align='center'>";
-echo "<tr align='center'><th>LAB ID</th><th>LAB NAME</th><th>INTEGRATION LEVEL</th><th>STATUS</th></tr>";
+echo "<tr align='center'><th>LAB ID</th><th>LAB NAME</th><th align='center'>INTEGRATION LEVEL</th><th>STATUS</th></tr>";
 while($row = mysqli_fetch_array($result)) 
  {  
     echo "<tr align='left'><td>$row[lab_id]</td>";
     echo "<td><a href='test1.php?id=\"$row[lab_name]\"'  value=\"$row[lab_name]\">".$row[lab_name]."</a></td>";
-    echo "<td>".$row[integration_level]."</td>";
+    echo "<td align='center'>".$row[integration_level]."</td>";
     echo "<td>".$row[status]. "</td></tr>";
  }
 echo "</table>";

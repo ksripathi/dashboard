@@ -8,7 +8,7 @@ echo "<div class='info1'>Total number of institutes: <font color='blue'>".$two."
 echo "<br>";
 echo "<table style='width:20%' border=1 id='tableID'>";
 
-echo "<th>INSTITUTE NAME</th>";
+echo "<tr><th>INSTITUTE NAME</th></tr>";
 while($row = mysqli_fetch_array($result)) {
  
   

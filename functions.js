@@ -20,7 +20,7 @@ function showPhase(str)
                 document.getElementById("phase").innerHTML = xmlhttp.responseText;
             }
         }
-        xmlhttp.open("GET","getcombos.php",true);
+        xmlhttp.open("GET","getphase.php",true);
         xmlhttp.send();
     }
 

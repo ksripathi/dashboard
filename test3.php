@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="test.css" type="text/css">
+<br>
 <a href="javascript:goBack()" class="myButton">Back</a>
 <script>
 function goBack()
@@ -22,7 +23,7 @@ $two = mysqli_num_rows($result);
 //echo "Total Number Of Institutes:".$two;
 echo "<br><br>";
 echo "<table border='1'>";
-echo "<h4>Number of Labs used <font color='blue'>$e </font> Technology : " .$two."</h4>";
+echo "<span class='tab'>Total Number of labs used <font color='blue'>$e </font> technology : " .$two."</span><br><br>";
 echo "<tr><th>LAB ID</th><th>LAB NAME</th></tr>";
 
 while($row = mysqli_fetch_array($result))

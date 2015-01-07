@@ -16,15 +16,6 @@ while($row = mysqli_fetch_array($result)) {
 }
 
   echo "</select>";echo "<br><br>";	
-echo "Select Discipline Name : ";
-echo "<select>";
-while($row = mysqli_fetch_array($result1)) {
- 
-  
-  echo "<option>" . $row['discipline_name'] . "</option>";
-
-}
-  echo "</select>";
 
 mysqli_close($con);
 ?> 

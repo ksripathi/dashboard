@@ -7,6 +7,7 @@ table {
     text-align: center;
     margin-left: 15%;
     font-size: 2.3vh;
+    
     /*width:100%;*/
 
     
@@ -15,22 +16,48 @@ th, td {
 	/*width: 50%;*/
     padding: 5px;
     margin-top: 70%;
+    font-style:normal;
+    font-size: 13px;
+    font-weight: normal;
 
     /*background-color:;*/
 }
 th
 {
-	padding: 11px;
+	padding: 8px;
 /*width: 50%;*/
 text-align:center;
 background-color:grey;
+font-weight:bold;
+}
+span.tab
+{
+    font-weight:bold;
+    padding: 0 190px; /* Or desired space*/
+}
+
+span.tab1
+{
+    font-weight:bold;
+    padding: 0 400px; /* Or desired space*/
 }
 #tableID{
 	position: relative;
 	margin-left: 0%;
 	font-style: 5px;
+	text-align:left;
 }
-
+#tableID1{
+	position: relative;
+	margin-left: 0%;
+	font-style: 5px;
+	text-align:left;
+	left:15%;
+}
+div.fontstyle
+{
+font-style: normal;
+}
 
 .info{
     position: relative;
@@ -47,9 +74,14 @@ background-color:grey;
     margin-left: 0%;
     width: 100%;
     margin-top: 0%;
-    font-size: 13px;
+    font-size: 16px;
 }
-a {text-decoration:none;}
+a{
+text-decoration:none;
+font-size: 13px;
+font-weight: normal;
+
+}
 .myButton {
 	-moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
 	-webkit-box-shadow:inset 0px 0px 14px -3px #f2fadc;
