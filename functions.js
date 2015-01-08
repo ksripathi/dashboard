@@ -134,8 +134,7 @@ function showInstitutes(str)
 
 function showdisplay(str)
 {
- 
-    if (str == "")
+        if (str == "")
     {
         document.getElementById("labs").innerHTML = "";
         return;
@@ -156,7 +155,7 @@ function showdisplay(str)
         }
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-               document.getElementById("test").innerHTML = xmlhttp.responseText;
+                document.getElementById("test").innerHTML = xmlhttp.responseText;
               
             }
         }   

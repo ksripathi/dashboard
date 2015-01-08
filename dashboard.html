@@ -2,24 +2,19 @@
 <html>
 <link rel="stylesheet" type="text/css" href="dashboard.css" />
 <link href="tabcontent.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="https://login.persona.org/include.js"></script>
 <script src="tabcontent.js" type="text/javascript"></script>
 <script type="text/javascript" src = "dashboard.js"></script>
 <script type="text/javascript" src = "functions.js"></script>
 <link rel="stylesheet" href="test.css" type="text/css">
 <script type="text/javascript">
-
 function logOut(){
-
-
   var currentUser = '';
-  
   navigator.id.watch({
     loggedInUser: currentUser,
     onlogin: function(assertion) {
-    // A user has logged in! Here you need to:
-    // 1. Send the assertion to your backend for verification and to create a session.
-    // 2. Update your UI.
     window.location.href="dashboard(some).html"
     $.ajax({ /* <-- This example uses jQuery, but you can use whatever you'd like */
       type: 'POST',
@@ -34,10 +29,6 @@ function logOut(){
   },
 
   onlogout: function() {
-    // A user has logged out! Here you need to:
-    // Tear down the user's session by redirecting the user or making a call to your backend.
-    // Also, make sure loggedInUser will get set to null on the next page load.
-    // (That's a literal JavaScript null. Not false, 0, or undefined. null.)
     window.location.href="index1.html"
     $.ajax({
       type: 'POST',
@@ -49,18 +40,14 @@ function logOut(){
 });
 
 }
-
 </script>
-
 <body onload='showdisplay(str)'>
-<div class = "a"></div>
-<div id="header">VLEAD Dashboard
-<!-- <div id = "login"><button type="button" onclick="Log in">Log In</button></div> -->
-<div id = "login" onclick="logOut()" ><img src="images/logout.jpg" width="100%" height="100%"></div>
-<div class = "vlabsIcon" > <img src="images/VirtualLabs_final_logo.png" width="100%" height="100%"></div>
+<div id="header">Dashboard
 
-<!-- <div class = "vlabsIcon" > </div> -->
-<div></div>
+  <!-- <div class = "vlabsIcon" > <img src="images/VirtualLabs_final_logo.png" width="100%" height="100%"></div> -->
+  <div class = "VLEAD" ><a href="http://vlead.virtual-labs.ac.in/"> <img src="images/VLEAD.png" width="100%" height="100%"></a></div>
+  <div id="login"><button class="button_example" onclick="login()">Sign In </a></div>
+  
 <div class="line" ></div>
 <ul class="tabs">
     <li><a href="#view4">Search</a></li>   
@@ -69,115 +56,96 @@ function logOut(){
     <li><a href="#view3" onclick="showDisciplines(this.value)">Discipline</a></li>    
     <li><a href="#view5" onclick="showDevelopers(this.value)">Developers</a></li>
     <li><a href="#view6" onclick="showTechnologies(this.value)">Technologies</a></li>
-    <li><a href="#view7" onclick="showPhase(this.value)">Phase-II</a></li>
-    
-
+    <li><a href="#view7" onclick="showPhase(this.value)">Phase-II Labs</a></li>
 </ul>
-
 <div class="tabcontents">
-    <div id="view1">
-         <h4 id="labs" align="center">labs</h4>
-    </div>
-    <div id="view2"> 
-           <h4 id="institutes" align="center">institutes</h4>
-    </div>
-   <div id="view3">
-            <h4 id="disciplines" align="center">disciplines</h4>
-
-   </div>
-
-   <div id="view5">
-            <h4 id="developers" align="center">developers</h4>
-
-   </div>
-   <div id="view6">
-            <h4 id="technologies" align="center">technlogies</h4>
-
-   </div>
-   <div id="view7">
-            <h4 id="phase" align="center">phase2</h4>
-
-   </div>
-   
-
-</div>
-
-<div class="tabcontents">
-  <div id="view4">  
+  <div id="view1"><h4 id="labs" align="center">labs</h4></div>
+  <div id="view2"><h4 id="institutes" align="center">institutes</h4></div>
+  <div id="view3"><h4 id="disciplines" align="center">disciplines</h4></div>
+  <div id="view5"><h4 id="developers" align="center">developers</h4></div>
+   <div id="view6"><h4 id="technologies" align="center">technlogies</h4></div>
+   <div id="view7"><h4 id="phase" align="center">phase2</h4></div></div>
+<div class="tabcontents"><div id="view4">  
         
-<form name="myform" id="form-id">
-<br>
+<form name="myform" class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-5 control-label">Select Institute:</label>
+    <div class='col-md-2'>
+      <select class="form-control" name ="selectbyinstitute">
+        <option value="0">None</option>
+        <option value="1">Amrita University</option>
+        <option value="2">COEP</option>
+        <option value="3">Dayalbagh</option>
+        <option value="4">IIIT-H</option>
+        <option value="5">IIT-Bombay</option>
+        <option value="6">IIT-Delhi</option>
+        <option value="7">IIT-Guwahati</option>
+        <option value="8">IIT-Kanpur</option>
+        <option value="9">IIT-Kharagpur</option>
+        <option value="10">IIT-Madras</option>
+        <option value="11"> IIT-Roorkee</option>
+        <option value="12">NIT-K</option>
+      </select>
+    </div>
+  </div>
 
-<div class="label_class"> Select institute name: </div>
-<div class="div-width"><div class="styled-select blue semi-square align_class " >
-<select name ="selectbyinstitute">
-<option value="0">None</option>
-<option value="1">Amrita University</option>
-<option value="2">COEP</option>
-<option value="3">Dayalbagh</option>
-<option value="4">IIIT-H</option>
-<option value="5">IIT-Bombay</option>
-<option value="6">IIT-Delhi</option>
-<option value="7">IIT-Guwahati</option>
-<option value="8">IIT-Kanpur</option>
-<option value="9">IIT-Kharagpur</option>
-<option value="10">IIT-Madras</option>
-<option value="11"> IIT-Roorkee</option>
-<option value="12">NIT-K</option>
-</select><br>
-</div>
-</div>
-<br> 
-<br>
-<div class="label_class">Select discipline name:</div>
-<div class="div-width"><div class="styled-select blue semi-square" >
-<select name ="selectbydiscipline">
-<option value="0">None</option>
-<option value="1">Aerospace Engineering</option>
-<option value="2">Biotechnology and Biomedical Engineering</option>
-<option value="3">Chemical Engineering</option>
-<option value="4">Chemical Sciences</option>
-<option value="5">Civil Engineering</option>
-<option value="6">Computer Science & Engineering</option>
-<option value="7">Electrical Engineering</option>
-<option value="8">Electronics & Communications</option>
-<option value="9">Humanities</option>
-<option value="10"> Mechanical Engineering</option>
-<option value="11">Physical Sciences</option>
-<option value="12">Textile Department</option>
-</select>
-</div>
-</div>
-<br><br>
-<div class="label_class">Select Status:</div>
-<div class="div-width"><div class="styled-select blue semi-square" >
-<select name ="selectbystatus">
-<option value="None">None</option>
-<option value="Hosted">Hosted</option>
-<option value="Not Hosted">Not Hosted</option>
-<option value="Hosted with simulations">Hosted with simulations</option>
-</select>
-</div></div>
-<br><br>
-<div class="label_class">Select Integration Level:</div>
-<div class="div-width"><div class="styled-select blue semi-square" >
-<select name = "selectbyintegrationlevel">
-<option value="None">None</option>
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
-</div></div>
-<br><br>
-<a href="javascript:showdisplay(this.value)" class="myButton" value="test">Search</a>
-<!--<input type="button" value="submit" onclick="showdisplay(this.value)"></innput>-->
+  <div class="form-group">
+  <label class="col-sm-5 control-label">Select discipline name:</label>
+  
+  <div class='col-md-2'>
+    <select class="form-control" name ="selectbydiscipline">
+      <option value="0">None</option>
+      <option value="1">Aerospace Engineering</option>
+      <option value="2">Biotechnology and Biomedical Engineering</option>
+      <option value="3">Chemical Engineering</option>
+      <option value="4">Chemical Sciences</option>
+      <option value="5">Civil Engineering</option>
+      <option value="6">Computer Science and Engineering</option>
+      <option value="7">Electrical Engineering</option>
+      <option value="8">Electronics and Communications</option>
+      <option value="9">Humanities</option>
+      <option value="10"> Mechanical Engineering</option>
+      <option value="11">Physical Sciences</option>
+      <option value="12">Textile Department</option>
+    </select>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <label  class="col-sm-5 control-label">Select Status:</label>
+  <div class='col-md-2'>
+    <select class="form-control"name ="selectbystatus">
+    <option value="None">None</option>
+    <option value="Hosted">Hosted</option>
+    <option value="Not Hosted">Not Hosted</option>
+    <option value="Hosted with simulations">Hosted with simulations</option>
+    </select>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <label class="col-sm-5 control-label">Select Integration Level:</label>
+  <div class='col-md-2'>
+    <select class="form-control" name = "selectbyintegrationlevel">
+      <option value="None">None</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-5 col-sm-1">
+      <a href="javascript:showdisplay(this.value)" class="btn btn-primary" value="test">Search</a>
+    </div>
+  </div>
 </form>
-<div id="test" align="center"></div>
 
-</div>
-</div>
+
+<div id="test" align="center"></div>
 </body>
 </html>
